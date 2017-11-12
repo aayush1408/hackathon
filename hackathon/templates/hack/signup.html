@@ -1,0 +1,70 @@
+{% block content %}
+
+    <!--<form method="post">-->
+        <!--{% csrf_token %}-->
+        <!--{% for field in form %}-->
+            <!--<p>-->
+                <!--{{ field.label_tag }}-->
+                <!--{{ field }}-->
+                <!--{% if field.help_text %}-->
+                    <!--<small style="color: grey">{{ field.help_text }}</small>-->
+                <!--{% endif %}-->
+
+                <!--{% for error in field.errors %}-->
+                  <!--<p style="color: red">{{ error }}</p>-->
+                <!--{% endfor %}-->
+            <!--</p>-->
+        <!--{% endfor %}-->
+        <!--<button type="submit" class="btn btn-success">Sign up</button>-->
+    <!--</form>-->
+
+ <div class="container col-sm-8" style="">
+        <div id="loginbox" style="margin-top:px;">
+            <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title"><h1>Sign Up</h1></div>
+                    </div>
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                        <form method="post">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <p>
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                    {% if field.help_text %}
+                                        <small style="color: grey">{{ field.help_text }}</small>
+                                    {% endif %}
+
+                                    {% for error in field.errors %}
+                                      <p style="color: red">{{ error }}</p>
+                                    {% endfor %}
+                                </p>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-success">Sign up</button>
+
+                        </form>
+
+                        </div>
+                    </div>
+        </div>
+ </div>
+
+
+
+<script>
+$('.js-captcha-refresh').click(function(){
+    $form = $(this).parents('form');
+
+    $.getJSON($(this).data('url'), {}, function(json) {
+        // This should update your captcha image src and captcha hidden input
+    });
+
+    return false;
+});
+</script>
+
+{% endblock %}

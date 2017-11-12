@@ -1,0 +1,8 @@
+Django==1.11.6
+django-password-reset==1.0
+django-simple-captcha==0.5.5
+olefile==0.44
+Pillow==4.3.0
+pytz==2017.2
+six==1.11.0
+towel==0.10.1
